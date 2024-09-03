@@ -1,26 +1,28 @@
 import { createStorage } from 'unstorage'
-import { Store } from 'tauri-plugin-store-api'
 
-const store = new Store('.servers.dat')
 const storage = createStorage()
 storage.mount('servers', {
   getKeys() {
-    return store.keys()
+    const keys = []
+    for (let i = 0; i < localStorage.length; i++) {
+      keys.push(localStorage.key(i) as string)
+    }
+    return keys
   },
-  async removeItem(key: string) {
-    await store.delete(key)
+  removeItem(key: string) {
+    localStorage.removeItem(key)
   },
   clear() {
-    return store.clear()
+    return localStorage.clear()
   },
   hasItem(key: string) {
-    return store.has(key)
+    return !!localStorage.getItem(key)
   },
   setItem(key: string, value: any) {
-    return store.set(key, value)
+    return localStorage.setItem(key, value)
   },
   getItem(key: string) {
-    return store.get(key)
+    return localStorage.getItem(key)
   },
 })
 

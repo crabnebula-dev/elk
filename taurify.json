@@ -1,0 +1,59 @@
+{
+  "$schema": null,
+  "version": "0.1.0",
+  "productName": "elk",
+  "identifier": "com.viteconf.ag",
+  "description": null,
+  "longDescription": null,
+  "cloudOrgSlug": null,
+  "cloudAppSlug": null,
+  "productionSrc": "http://localhost:5314",
+  "devSrc": "http://localhost:5314",
+  "beforeDevCommand": "pnpm dev",
+  "app": {
+    "icon": "./public/pwa-192x192.png",
+    "windows": [
+      {
+        "label": "main",
+        "title": "@elk-zone/elk"
+      }
+    ]
+  },
+  "iOS": {
+    "targets": [
+      {
+        "bundle": "app-store-connect"
+      }
+    ]
+  },
+  "android": {
+    "targets": [
+      {
+        "bundle": "aab",
+        "destination": "play-store"
+      }
+    ]
+  },
+  "windows": {
+    "targets": [
+      {
+        "bundle": "nsis"
+      }
+    ]
+  },
+  "linux": {
+    "targets": [
+      {
+        "bundle": "appimage"
+      }
+    ]
+  },
+  "macOS": {
+    "targets": [
+      {
+        "bundle": "dmg"
+      }
+    ],
+    "arch": "arm64"
+  }
+}

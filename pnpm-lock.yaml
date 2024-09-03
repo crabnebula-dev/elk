@@ -226,12 +226,6 @@ importers:
       string-length:
         specifier: ^5.0.1
         version: 5.0.1
-      tauri-plugin-log-api:
-        specifier: github:tauri-apps/tauri-plugin-log
-        version: https://codeload.github.com/tauri-apps/tauri-plugin-log/tar.gz/2bb26e22f7f7b4f164bad02f0ae4085796f77fff
-      tauri-plugin-store-api:
-        specifier: github:tauri-apps/tauri-plugin-store
-        version: https://codeload.github.com/tauri-apps/tauri-plugin-store/tar.gz/5f5404feea43b6cddd65e4171f52e92ca161a2aa
       theme-vitesse:
         specifier: ^0.8.0
         version: 0.8.3
@@ -2449,10 +2443,6 @@ packages:
 
   '@surma/rollup-plugin-off-main-thread@2.2.3':
     resolution: {integrity: sha512-lR8q/9W7hZpMWweNiAKU7NQerBnzQQLvi8qnTDU/fxItPhtZVMbPV3lbCwjhIlNBe9Bbr5V+KHshvWmVSG9cxQ==}
-
-  '@tauri-apps/api@1.6.0':
-    resolution: {integrity: sha512-rqI++FWClU5I2UBp4HXFvl+sBWkdigBkxnpJDQUWttNyG7IZP4FwQGhTNL5EOw0vI8i6eSAJ5frLqO7n7jbJdg==}
-    engines: {node: '>= 14.6.0', npm: '>= 6.6.0', yarn: '>= 1.19.1'}
 
   '@tiptap/core@2.2.4':
     resolution: {integrity: sha512-cRrI8IlLIhCE1hacBQzXIC8dsRvGq6a4lYWQK/BaHuZg21CG7szp3Vd8Ix+ra1f5v0xPOT+Hy+QFNQooRMKMCw==}
@@ -7392,14 +7382,6 @@ packages:
     resolution: {integrity: sha512-/Wo7DcT0u5HUV486xg675HtjNd3BXZ6xDbzsCUZPt5iw8bTQ63bP0Raut3mvro9u+CUyq7YQd8Cx55fsZXxqLQ==}
     engines: {node: '>=10'}
 
-  tauri-plugin-log-api@https://codeload.github.com/tauri-apps/tauri-plugin-log/tar.gz/2bb26e22f7f7b4f164bad02f0ae4085796f77fff:
-    resolution: {tarball: https://codeload.github.com/tauri-apps/tauri-plugin-log/tar.gz/2bb26e22f7f7b4f164bad02f0ae4085796f77fff}
-    version: 0.0.0
-
-  tauri-plugin-store-api@https://codeload.github.com/tauri-apps/tauri-plugin-store/tar.gz/5f5404feea43b6cddd65e4171f52e92ca161a2aa:
-    resolution: {tarball: https://codeload.github.com/tauri-apps/tauri-plugin-store/tar.gz/5f5404feea43b6cddd65e4171f52e92ca161a2aa}
-    version: 0.0.0
-
   temp-dir@2.0.0:
     resolution: {integrity: sha512-aoBAniQmmwtcKp/7BzsH8Cxzv8OL736p7v1ihGb5e9DJ9kTwGWHrQrVB5+lfVDzfGrdRzXch+ig7LHaY1JTOrg==}
     engines: {node: '>=8'}
@@ -10223,7 +10205,7 @@ snapshots:
       tinyglobby: 0.2.5
       unimport: 3.11.1(rollup@4.20.0)
       vite: 5.4.2(@types/node@20.8.6)(terser@5.22.0)
-      vite-plugin-inspect: 0.8.7(@nuxt/kit@3.13.0(magicast@0.3.4)(rollup@4.20.0))(rollup@4.20.0)(vite@5.4.2(@types/node@20.8.6)(terser@5.22.0))
+      vite-plugin-inspect: 0.8.7(@nuxt/kit@3.13.0(magicast@0.3.4)(rollup@2.79.1))(rollup@4.20.0)(vite@5.4.2(@types/node@20.8.6)(terser@5.22.0))
       vite-plugin-vue-inspector: 5.1.3(vite@5.4.2(@types/node@20.8.6)(terser@5.22.0))
       which: 3.0.1
       ws: 8.18.0
@@ -11121,8 +11103,6 @@ snapshots:
       json5: 2.2.3
       magic-string: 0.25.9
       string.prototype.matchall: 4.0.8
-
-  '@tauri-apps/api@1.6.0': {}
 
   '@tiptap/core@2.2.4(@tiptap/pm@2.2.4)':
     dependencies:
@@ -17609,14 +17589,6 @@ snapshots:
       mkdirp: 1.0.4
       yallist: 4.0.0
 
-  tauri-plugin-log-api@https://codeload.github.com/tauri-apps/tauri-plugin-log/tar.gz/2bb26e22f7f7b4f164bad02f0ae4085796f77fff:
-    dependencies:
-      '@tauri-apps/api': 1.6.0
-
-  tauri-plugin-store-api@https://codeload.github.com/tauri-apps/tauri-plugin-store/tar.gz/5f5404feea43b6cddd65e4171f52e92ca161a2aa:
-    dependencies:
-      '@tauri-apps/api': 1.6.0
-
   temp-dir@2.0.0: {}
 
   tempy@0.6.0:
@@ -18349,7 +18321,7 @@ snapshots:
       - rollup
       - supports-color
 
-  vite-plugin-inspect@0.8.7(@nuxt/kit@3.13.0(magicast@0.3.4)(rollup@4.20.0))(rollup@4.20.0)(vite@5.4.2(@types/node@20.8.6)(terser@5.22.0)):
+  vite-plugin-inspect@0.8.7(@nuxt/kit@3.13.0(magicast@0.3.4)(rollup@2.79.1))(rollup@4.20.0)(vite@5.4.2(@types/node@20.8.6)(terser@5.22.0)):
     dependencies:
       '@antfu/utils': 0.7.10
       '@rollup/pluginutils': 5.1.0(rollup@4.20.0)
@@ -18362,7 +18334,7 @@ snapshots:
       sirv: 2.0.4
       vite: 5.4.2(@types/node@20.8.6)(terser@5.22.0)
     optionalDependencies:
-      '@nuxt/kit': 3.13.0(magicast@0.3.4)(rollup@4.20.0)
+      '@nuxt/kit': 3.13.0(magicast@0.3.4)(rollup@2.79.1)
     transitivePeerDependencies:
       - rollup
       - supports-color

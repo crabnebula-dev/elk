@@ -16,6 +16,7 @@ export default defineNuxtConfig({
       },
     },
   },
+
   modules: [
     '@vueuse/nuxt',
     '@unocss/nuxt',
@@ -25,7 +26,7 @@ export default defineNuxtConfig({
     '@nuxtjs/color-mode',
     '@unlazy/nuxt',
     '@nuxt/test-utils/module',
-    ...(isDevelopment || isWindows) ? [] : ['nuxt-security'],
+    ...((isDevelopment || isWindows) ? [] : ['nuxt-security']),
     '~/modules/emoji-mart-translation',
     '~/modules/purge-comments',
     '~/modules/build-env',
@@ -33,42 +34,49 @@ export default defineNuxtConfig({
     '~/modules/pwa/index', // change to '@vite-pwa/nuxt' once released and remove pwa module
     'stale-dep/nuxt',
   ],
+
   vue: {
     propsDestructure: true,
   },
+
   macros: {
     setupSFC: true,
     betterDefine: false,
     defineModels: false,
     reactivityTransform: false,
   },
+
   devtools: {
     enabled: true,
   },
+
   features: {
     inlineStyles: false,
   },
+
   experimental: {
     payloadExtraction: false,
     renderJsonPayloads: true,
+    appManifest: false,
   },
+
   css: [
     '@unocss/reset/tailwind.css',
     'floating-vue/dist/style.css',
     '~/styles/default-theme.css',
     '~/styles/vars.css',
     '~/styles/global.css',
-    ...process.env.TAURI_PLATFORM === 'macos'
-      ? []
-      : ['~/styles/scrollbars.css'],
+    ...(process.env.TAURI_PLATFORM === 'macos' ? [] : ['~/styles/scrollbars.css']),
     '~/styles/tiptap.css',
     '~/styles/dropdown.css',
   ],
+
   alias: {
     'querystring': 'rollup-plugin-node-polyfills/polyfills/qs',
     'change-case': 'scule',
     'semver': resolve('./mocks/semver'),
   },
+
   imports: {
     dirs: [
       './composables/masto',
@@ -83,6 +91,7 @@ export default defineNuxtConfig({
     }],
     injectAtEnd: true,
   },
+
   vite: {
     define: {
       'process.env.VSCODE_TEXTMATE_DEBUG': 'false',
@@ -133,16 +142,19 @@ export default defineNuxtConfig({
       ],
     },
   },
+
   postcss: {
     plugins: {
       'postcss-nested': {},
     },
   },
+
   appConfig: {
     storage: {
       driver: process.env.NUXT_STORAGE_DRIVER ?? (isCI ? 'cloudflare' : 'fs'),
     },
   },
+
   runtimeConfig: {
     adminKey: '',
     cloudflare: {
@@ -169,6 +181,7 @@ export default defineNuxtConfig({
       fsBase: 'node_modules/.cache/app',
     },
   },
+
   routeRules: {
     // Static generation
     '/': { prerender: true },
@@ -183,6 +196,7 @@ export default defineNuxtConfig({
       },
     },
   },
+
   nitro: {
     alias: {
       'isomorphic-ws': 'unenv/runtime/mock/proxy',
@@ -213,7 +227,9 @@ export default defineNuxtConfig({
       },
     ],
   },
+
   sourcemap: isDevelopment,
+
   hooks: {
     'prepare:types': function ({ references }) {
       references.push({ types: '@types/wicg-file-system-access' })
@@ -248,6 +264,7 @@ export default defineNuxtConfig({
       }
     },
   },
+
   app: {
     keepalive: true,
     head: {
@@ -304,7 +321,9 @@ export default defineNuxtConfig({
     },
     rateLimiter: false,
   },
+
   colorMode: { classSuffix: '' },
+
   i18n: {
     locales: currentLocales,
     lazy: true,
@@ -314,13 +333,18 @@ export default defineNuxtConfig({
     defaultLocale: 'en-US',
     vueI18n: './config/i18n.config.ts',
   },
+
   pwa,
+
   staleDep: {
     packageManager: 'pnpm',
   },
+
   unlazy: {
     ssr: false,
   },
+
+  compatibilityDate: '2024-09-03',
 })
 
 declare global {
